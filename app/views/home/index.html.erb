@@ -1,3 +1,14 @@
-<h1>Home#index</h1>
+<h1>Homeindex</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 <h1>Hola mundo</h1>
+<!--<%= image_tag("puddi.png",width: "300")%>-->
+
+<p><% @producto.each do |prod| %>
+	<tr>
+		<td> <%=prod.nombre %> </td>
+		<td> <%=prod.marca %> </td>
+		<td> <%=prod.modelo %> </td>
+		<td> <%=prod.precio %> </td>
+	</tr>
+<% end %>
+</p>
