@@ -1,3 +1,19 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 3ec2599d13c1c4d6ab7c5bd291b8ff31e625915e
+  specs:
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
+
+GIT
+  remote: http://github.com/rmagick/rmagick.git
+  revision: 79e1708c7f6792a3a90cb8cb3ffaeb74c58e092e
+  specs:
+    rmagick (2.13.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -45,6 +61,10 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -172,7 +192,9 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
+  paperclip!
   rails (= 4.2.0.beta2)
+  rmagick (= 2.13.2)!
   sass-rails (~> 5.0.0.beta1)
   sdoc (~> 0.4.0)
   spring

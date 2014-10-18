@@ -44,5 +44,12 @@ group :development, :test do
 
   #Devise
   gem 'devise'
+
+    #Paperclip
+  gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+
+  #RMagick
+  gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+  
 end
 

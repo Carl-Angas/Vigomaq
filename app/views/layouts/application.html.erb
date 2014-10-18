@@ -70,8 +70,8 @@ Fin Probando-->
         <% if user_signed_in? %>  
           <li><%= link_to "Desconectar", destroy_user_session_path, method: :delete %>  </li>
         <% else %>  
-          <li><a href="users/sign_up">Registrar</a></li> 
-          <li><a href="users/sign_in">Login</a></li>
+          <li><a href="/users/sign_up">Registrar</a></li> 
+          <li><a href="/users/sign_in">Login</a></li>
         <% end %> 
         <!--<li><a href="users/sign_up">Registrar</a></li>-->
         <!--<li><a href="users/sign_in">Login</a></li>-->

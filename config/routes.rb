@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+
   devise_for :users
   get 'inicio/index'
 
@@ -58,5 +60,5 @@ Rails.application.routes.draw do
   #   end
 
 
-  DELETE 'users/sign_out' => "devise/sessions#destroy"
+  #DELETE 'users/sign_out' => "devise/sessions#destroy"
 end
