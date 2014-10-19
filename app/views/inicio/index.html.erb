@@ -1,2 +1,11 @@
 <h1>Bienvenido a Vigomaq</h1>
 <p>Find me in app/views/inicio/index.html.erb</p>
+
+<% if user_signed_in? %> 
+	<% if current_user.tipo != 2 %>  
+  	<li> Conectado como <%= current_user.tipo %> perro</li>
+  	<% else %>  
+  	<li> soy admin, perro</li>
+	<% end %>  
+  <% else %>  
+<% end %> 

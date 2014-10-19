@@ -50,6 +50,9 @@ group :development, :test do
 
   #RMagick
   gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+
+  #Cancan
+  gem 'cancan'
   
 end
 

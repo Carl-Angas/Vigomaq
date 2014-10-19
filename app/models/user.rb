@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   has_one :city
   has_one :usertype
 
-  has_and_belongs_to_many :products
+
 
 end
