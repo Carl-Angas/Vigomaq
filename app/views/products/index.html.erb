@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Productos registrados</h1>
+<h1>Productos</h1>
 
 <table>
   <thead>
@@ -27,13 +27,20 @@
         <td><%= product.categoria %></td>
         <td><%= product.tipo %></td>
         <td><%= link_to 'Ver detalles', product %></td>
-        <td><%= link_to 'Editar', edit_product_path(product) %></td>
-        <td><%= link_to 'Borrar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>  
+            <td><%= link_to 'Editar', edit_product_path(product) %></td>
+            <td><%= link_to 'Borrar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>  
+        <% end %> 
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if user_signed_in? %>  
+  <%= link_to 'Agregar nuevo producto', new_product_path %>
+  <% else %>  
+<% end %> 
 
-<%= link_to 'Agregar nuevo producto', new_product_path %>

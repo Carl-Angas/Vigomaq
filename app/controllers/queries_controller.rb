@@ -4,17 +4,18 @@ class QueriesController < ApplicationController
   respond_to :html, :xml, :json 
 
   def index
+    @user_query = Query.where(:email => current_user.email)
     @queries = Query.all
-    #respond_with(@queries)
+    respond_with(@queries)
   end
 
   def show
-    #respond_with(@query)
+    respond_with(@query)
   end
 
   def new
     @query = Query.new
-    #respond_with(@query)
+    respond_with(@query)
   end
 
   def edit
@@ -23,17 +24,17 @@ class QueriesController < ApplicationController
   def create
     @query = Query.new(query_params)
     @query.save
-    #respond_with(@query)
+    respond_with(@query)
   end
 
   def update
     @query.update(query_params)
-    #respond_with(@query)
+    respond_with(@query)
   end
 
   def destroy
     @query.destroy
-    #respond_with(@query)
+    respond_with(@query)
   end
 
   private

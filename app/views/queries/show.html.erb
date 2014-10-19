@@ -19,6 +19,9 @@
   <strong>Respuesta:</strong>
   <%= @query.respuesta %>
 </p>
+<% if current_user.tipo == 2 %>  
+  <%= link_to 'Edit', edit_query_path(@query) %> |
+  <% else %>  
+<% end %> 
 
-<%= link_to 'Edit', edit_query_path(@query) %> |
 <%= link_to 'Back', queries_path %>

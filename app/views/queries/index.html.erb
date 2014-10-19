@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Queries</h1>
+<h1>Consultas realizadas</h1>
 
 <table>
   <thead>
@@ -13,6 +13,22 @@
     </tr>
   </thead>
 
+  <% if current_user.tipo != 2 %>
+  <tbody>
+    <% @user_query.each do |uquery| %>
+      <tr>
+        <td><%= uquery.nombre %></td>
+        <td><%= uquery.email %></td>
+        <td><%= uquery.consulta %></td>
+        <td><%= uquery.respuesta %></td>
+        <td><%= link_to 'Show', uquery %></td>
+        <td><%= link_to 'Edit', edit_query_path(uquery) %></td>
+        <td><%= link_to 'Destroy', uquery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <% else %>
   <tbody>
     <% @queries.each do |query| %>
       <tr>
@@ -26,6 +42,9 @@
       </tr>
     <% end %>
   </tbody>
+
+
+<% end %>
 </table>
 
 <br>
