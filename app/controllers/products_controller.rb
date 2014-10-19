@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
     #respond_with(@product)
   end
 
+
   private
     def set_product
       @product = Product.find(params[:id])

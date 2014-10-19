@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018171351) do
+ActiveRecord::Schema.define(version: 20141019021015) do
+
+  create_table "categories", force: true do |t|
+    t.string   "categoria"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cities", force: true do |t|
+    t.string   "ciudad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "model_tables", force: true do |t|
+    t.string   "modelo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_products", force: true do |t|
+    t.datetime "fechaEmision"
+    t.datetime "fechaVencimiento"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "product_types", force: true do |t|
+    t.string   "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: true do |t|
     t.string   "nombre"
@@ -19,13 +50,25 @@ ActiveRecord::Schema.define(version: 20141018171351) do
     t.string   "marca"
     t.integer  "precio"
     t.string   "categoria"
-    t.string   "tipo"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "tipo"
+  end
+
+  create_table "trademarks", force: true do |t|
+    t.string   "marca"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_types", force: true do |t|
+    t.string   "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
@@ -41,6 +84,13 @@ ActiveRecord::Schema.define(version: 20141018171351) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "nombre"
+    t.string   "apellidoPaterno"
+    t.string   "apellidoMaterno"
+    t.string   "telefono"
+    t.string   "direccion"
+    t.string   "ciudad"
+    t.integer  "tipo",                   default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
