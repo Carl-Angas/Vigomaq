@@ -1,0 +1,10 @@
+<% if user_signed_in? %> 
+	<% if current_user.tipo != 2 %>  
+  	<li> Conectado como <%= current_user.tipo %></li>
+  	<% else %>  
+  	<li> Conectado como <%= current_user.tipo %></li>
+	<% end %>  
+  <% else %> 
+  <li>No tiene permiso para entrar a esta página</li>
+  <li><a href="/users/edit">Volver a inicio</a></li>
+<% end %> 
