@@ -27,10 +27,12 @@
         <td><%= product.categoria %></td>
         <td><%= product.tipo %></td>
         <td><%= link_to 'Ver detalles', product %></td>
-        <% if user_signed_in? %>  
-            <td><%= link_to 'Editar', edit_product_path(product) %></td>
-            <td><%= link_to 'Borrar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% else %>  
+        <% if user_signed_in? %>
+            <% if current_user.tipo == 2 %>  
+              <td><%= link_to 'Editar', edit_product_path(product) %></td>
+              <td><%= link_to 'Borrar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% else %>  
+            <<% end %>
         <% end %> 
 
       </tr>
@@ -39,8 +41,10 @@
 </table>
 
 <br>
-<% if user_signed_in? %>  
-  <%= link_to 'Agregar nuevo producto', new_product_path %>
-  <% else %>  
+<% if user_signed_in? %>
+  <% if current_user.tipo == 2 %> 
+    <%= link_to 'Agregar nuevo producto', new_product_path %>
+    <% else %>  
+  <% end %>
 <% end %> 
 

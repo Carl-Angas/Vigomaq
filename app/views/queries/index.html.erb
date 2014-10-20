@@ -15,30 +15,28 @@
 
   <% if current_user.tipo != 2 %>
   <tbody>
-    <% @user_query.each do |uquery| %>
+    <% @user_query.each do |userquery| %>
       <tr>
-        <td><%= uquery.nombre %></td>
-        <td><%= uquery.email %></td>
-        <td><%= uquery.consulta %></td>
-        <td><%= uquery.respuesta %></td>
-        <td><%= link_to 'Show', uquery %></td>
-        <td><%= link_to 'Edit', edit_query_path(uquery) %></td>
-        <td><%= link_to 'Destroy', uquery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= userquery.nombre %></td>
+        <td><%= userquery.email %></td>
+        <td><%= userquery.consulta %></td>
+        <td><%= userquery.respuesta %></td>
+        <td><%= link_to 'Mostrar', userquery %></td>
       </tr>
     <% end %>
   </tbody>
 
   <% else %>
   <tbody>
-    <% @queries.each do |query| %>
+    <% @queries.each do |admquery| %>
       <tr>
-        <td><%= query.nombre %></td>
-        <td><%= query.email %></td>
-        <td><%= query.consulta %></td>
-        <td><%= query.respuesta %></td>
-        <td><%= link_to 'Show', query %></td>
-        <td><%= link_to 'Edit', edit_query_path(query) %></td>
-        <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= admquery.nombre %></td>
+        <td><%= admquery.email %></td>
+        <td><%= admquery.consulta %></td>
+        <td><%= admquery.respuesta %></td>
+        <td><%= link_to 'Mostrar', admquery %></td>
+        <td><%= link_to 'Editar', edit_query_path(admquery) %></td>
+        <td><%= link_to 'Borrar', admquery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -49,4 +47,4 @@
 
 <br>
 
-<%= link_to 'New Query', new_query_path %>
+<%= link_to 'Nueva consulta', new_query_path %>

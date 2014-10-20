@@ -1,5 +1,13 @@
 <h1>Crear Producto</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Volver', products_path %>
+<% if user_signed_in? %> 
+	<% if current_user.tipo != 2 %>  
+		<li>No tiene permiso para entrar a esta página</li>
+  		<li><a href="/">Volver a inicio</a></li>
+  	<% else %>  
+  		<%= render 'form' %>
+	<% end %>  
+  <% else %> 
+  	<li>No tiene permiso para entrar a esta página</li>
+  	<li><a href="/">Volver a inicio</a></li>
+<% end %> 
