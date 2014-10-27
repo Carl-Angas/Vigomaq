@@ -1,0 +1,29 @@
+Carlos Bugueño 201004219-7
+Adriana Villegas 201273072-4
+
+El proyecto está siendo desarrollado en Ruby on Rails, con repositorio en GitHub (https://github.com/carlangasgg/Vigomaq)
+
+Supuestos realizados:
+
+*Generales: -Existen 3 tipos de usuarios: usuario sin login, usuario registrado y administrador. En el caso de usuario registrado, es del tipo 1, y el administrador es del tipo 2, esto es necesario para el tipo de seguridad y permisos que tiene cada usuario en las vistas. El usuario registrado puede ingresar al sistema con el registro normal como tipo 1 por defecto, en cambio el administrador debe ser creado por consola. El usuario sin registrar sólo puede ver productos existentes.
+
+	    -Se encuentra en funcionamiento los siguientes casos de uso: -Mostrar producto
+									 -Crear producto
+									 -Editar producto
+									 -Eliminar producto
+									 -Enviar mail de consulta
+	    
+	    
+
+
+*Modelo: -Se crearon diversos modelos, siendo User creado con Devise, y Query y Product con Scaffold
+	 -Algunos modelos y relaciones no están creadas o en funcionamiento, pero está activo todo lo necesario para entregable 2 del código
+
+
+*Vistas: -Se generaron las vistas relacionadas a los controladores inicio, products, query y devise
+	 -Las vistas son accesibles dependiendo del tipo de usuario, mencionado anteriormente
+         -Existe en el archivo layouts de las vistas componente CCS básico para el proyecto
+
+*Controladores: -Se encuentran los permisos que se tienen al estar conectados en el sitio
+		-Está integrado lo correspondiente a CRUD para las vistas de los User, Product y Query
+		
