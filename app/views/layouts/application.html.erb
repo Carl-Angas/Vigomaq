@@ -13,7 +13,9 @@
 Fin Probando-->
 
 <% if user_signed_in? %>  
-  <li> Conectado como <%= current_user.email %> </li>
+  <!--<li> Conectado como <%= current_user.email %> </li>-->
+  <!--<h6> Conectado como <%= current_user.email %> </h6> -->
+  <p class="text-right">Conectado como <%= current_user.email %></p>
   <% else %>  
 <% end %> 
 
@@ -70,9 +72,9 @@ Fin Probando-->
           <li><%= link_to "Desconectar", destroy_user_session_path, method: :delete %>  </li>
         <% else %>  
           <li><a href="/users/sign_up">Registrar</a></li> 
-          <li><a href="/users/sign_in">Login</a></li>
+          <li><a href="/users/sign_in">Iniciar sesión</a></li>
         <% end %> 
-        <li class="dropdown">
+        <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="a">Action</a></li>
@@ -81,7 +83,7 @@ Fin Probando-->
             <li class="divider"></li>
             <li><a href="xx">Separated link</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
