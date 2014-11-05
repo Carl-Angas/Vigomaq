@@ -6,13 +6,14 @@
   <%= javascript_include_tag 'application', :defaults, 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-<style type="text/css">
+
+<!--<style type="text/css">
   body{
 
-    background-color: #C0BD07;
+  #background-color: #2E2C2C;
   }
 
-</style>    
+</style>     -->
 </head>
 <body>
 
@@ -20,12 +21,7 @@
 
 Fin Probando-->
 
-<% if user_signed_in? %>  
-  <!--<li> Conectado como <%= current_user.email %> </li>-->
-  <!--<h6> Conectado como <%= current_user.email %> </h6> -->
-  <p class="text-right">Conectado como <%= current_user.email %></p>
-  <% else %>  
-<% end %> 
+
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -44,9 +40,9 @@ Fin Probando-->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
     <!--Probando consultas a admin-->
-        <li class="active"><a href="/products">Productos</a></li>
+        <li><a href="/products">Productos</a></li>
           <% if user_signed_in? %>  
-            <li class="active"><a href="/queries">Consultas</a></li>
+            <li><a href="/queries">Consultas</a></li>
           <% else %>  
             <!--<li class="active"><a href="/queries/">Revisar consultas</a></li>-->
 
@@ -76,8 +72,10 @@ Fin Probando-->
       </form>-->
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>  
+          <li><a href="#">Conectado como <%= current_user.email %></a></li>
           <li><a href="/users/edit">Editar Datos</a></li>
           <li><%= link_to "Desconectar", destroy_user_session_path, method: :delete %>  </li>
+
         <% else %>  
           <li><a href="/users/sign_up">Registrar</a></li> 
           <li><a href="/users/sign_in">Iniciar sesión</a></li>
@@ -96,6 +94,7 @@ Fin Probando-->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
 
 <%= yield %>
 
