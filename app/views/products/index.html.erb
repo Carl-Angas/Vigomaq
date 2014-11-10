@@ -5,7 +5,7 @@
 <table class = "table">
   <thead>
     <tr>
-      <th>Image</th>
+      <th>Imagen</th>
       <th>Nombre</th>
       <th>Modelo</th>
       <th>Marca</th>
@@ -26,16 +26,16 @@
         <td><%= product.precio %></td>
         <td><%= product.categoria %></td>
         <td><%= product.tipo %></td>
-        <td><%= link_to 'Ver detalles', product %></td>
+        <td class = "btn btn-lg btn-success"><%= link_to 'Ver detalles', product %></td>
         <% if user_signed_in? %>
             <% if current_user.tipo == 2 %>  
-              <td><%= link_to 'Editar', edit_product_path(product) %></td>
-              <td><%= link_to 'Borrar', product, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+              <td class = "btn btn-lg btn-warning"><%= link_to 'Editar', edit_product_path(product) %></td>
+              <td class = "btn btn-lg btn-danger"><%= link_to 'Borrar', product, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
             <% else %>  
             <<% end %>
         <% end %> 
 
-      </tr>
+        </tr>
     <% end %>
   </tbody>
 </table>

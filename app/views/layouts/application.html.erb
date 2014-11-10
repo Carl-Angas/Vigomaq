@@ -6,22 +6,8 @@
   <%= javascript_include_tag 'application', :defaults, 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 
-
-<!--<style type="text/css">
-  body{
-
-  #background-color: #2E2C2C;
-  }
-
-</style>     -->
 </head>
 <body>
-
-<!--Probando
-
-Fin Probando-->
-
-
 
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
@@ -42,7 +28,7 @@ Fin Probando-->
     <!--Probando consultas a admin-->
         <li><a href="/products">Productos</a></li>
           <% if user_signed_in? %>  
-            <li><a href="/queries">Consultas</a></li>
+            <!--<li><a href="/queries">Consultas</a></li>-->
           <% else %>  
             <!--<li class="active"><a href="/queries/">Revisar consultas</a></li>-->
 
@@ -62,14 +48,18 @@ Fin Probando-->
           </ul>
         </li>
       </ul>
+      
+      <!--Buscador-->
       <!--<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="¿Qué buscas?" >
 
         </div>
         <button type="button" class="btn btn-primary">Buscar</button>
 
       </form>-->
+      <!-- Fin Buscador -->
+
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>  
           <li><a href="#">Conectado como <%= current_user.email %></a></li>
