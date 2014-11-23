@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :queries
-
+  
+  #Lo necesario para el ActionMailer
+  get 'contact' => "contact#index"
+  post 'contact' => "contact#create"
+  
   resources :products
 
   devise_for :users
