@@ -19,26 +19,23 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Inicio</a>
+      <!--<a class="navbar-brand" href="/">Inicio</a>-->
+      <div class="img-responsive" alt="Responsive image" align="center">
+        
+        <%= link_to image_tag("logo.jpg", :alt => "Logo", :title => "Logo", size: "180x50"), "/" %>
+    </div>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-    <!--Probando consultas a admin-->
-        <li><a href="/products">Productos</a></li>
-          <% if user_signed_in? %>  
-            <!--<li><a href="/queries">Consultas</a></li>-->
-          <% else %>  
-            <!--<li class="active"><a href="/queries/">Revisar consultas</a></li>-->
-
-          <% end %> 
     
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Izq<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="/products">Productos</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
@@ -63,23 +60,21 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>  
           <li><a href="#">Conectado como <%= current_user.email %></a></li>
-          <li><a href="/users/edit">Editar Datos</a></li>
-          <li><%= link_to "Desconectar", destroy_user_session_path, method: :delete %>  </li>
-
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/users/edit">Editar Datos</a></li>
+            <li><a href="b">Another action</a></li>
+            <li><a href="c">Something else here</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Desconectar", destroy_user_session_path, method: :delete %>  </li>
+          </ul>
+        </li>
         <% else %>  
           <li><a href="/users/sign_up">Registrar</a></li> 
           <li><a href="/users/sign_in">Iniciar sesión</a></li>
         <% end %> 
-        <!--<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="a">Action</a></li>
-            <li><a href="b">Another action</a></li>
-            <li><a href="c">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="xx">Separated link</a></li>
-          </ul>
-        </li>-->
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
