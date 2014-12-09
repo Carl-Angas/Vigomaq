@@ -13,34 +13,38 @@
 <form class="form-inline" role="form">
   <!--<div class="field">-->
   <div class="form-group">
-    <%= f.label :nombre %><br>
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :modelo %><br>
-    <%= f.text_field :modelo %>
+    <%= f.label :modelo %>  
+    <%= f.collection_select :modelo, Modelo.all, :modelo, :modelo %> 
   </div>
   <div class="field">
-    <%= f.label :marca %><br>
-    <%= f.text_field :marca %>
+    <%= f.label :marca %>  
+    <%= f.collection_select :marca, Marca.all, :marca, :marca %> 
   </div>
   <div class="field">
-    <%= f.label :precio %><br>
+    <%= f.label :categoria %>  
+    <%= f.collection_select :categoria, Categorium.all, :categoria, :categoria %> 
+  </div>
+  <div class="field">
+    <%= f.label :tipo %>  
+    <%= f.collection_select :tipo, TipoProducto.all, :tipo, :tipo %> 
+  </div>
+  <div class="field">
+    <%= f.label :precio %>
     <%= f.number_field :precio %>
   </div>
-  <div class="field">
-    <%= f.label :categoria %><br>
-    <%= f.text_field :categoria %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.text_field :tipo %>
-  </div>
+
   <div class="field">
   <%= f.label :imagen %>
   <%= f.file_field :image %>
   </div>
+
+     
+
   <!--<div class="actions">-->
   <button class="btn btn-lg btn-default" type="submit">Registrar</button>
 <% end %>
-</form>
+
