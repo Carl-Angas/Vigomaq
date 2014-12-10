@@ -22,6 +22,11 @@ Rails.application.routes.draw do
   devise_for :users
   get 'inicio/index'
 
+  get 'inicio/empresa'
+  get 'admin/tipo_producto'
+  get 'admin/agregar_tipo_producto'
+
+
   #Anexando a prueba  
   get "/inicio/prueba" => "inicio#prueba"
 
