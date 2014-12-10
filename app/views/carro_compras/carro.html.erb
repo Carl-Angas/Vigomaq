@@ -1,0 +1,26 @@
+<h1>Carro de compras de <%= current_user.email %></h1>
+
+<div class="col-lg-10 col-lg-offset-1">
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th>Valor</th>
+				<th>Total: <%=@total %> </th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @carro.each do |c| %>
+				<tr>
+					<td><%=c.nombre%></td>
+					<td><%=c.precio%></td>
+					<td><%= link_to 'Quitar', :controller=>"carro_compras", :action=> "quitar_producto", :id_prod => c.id%></td>
+				</tr>		
+			<% end -%>
+		</tbody>
+	</table>
+</div>
+
+
+
+<a class="btn btn-lg btn-primary col-lg-offset-5" href="/products" role="button">Volver a productos <span class="glyphicon glyphicon-forward"></span></a>

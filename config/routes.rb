@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'admin/index'
 
   #post ':controller(/:action(/:id))'
-  #get  ':controller(/:action(/:id))'
+  get  ':controller(/:action(/:id))'
   
   #Lo necesario para el ActionMailer
   get 'contact' => "contact#index"
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'inicio/empresa'
   get 'admin/tipo_producto'
   get 'admin/agregar_tipo_producto'
+  get 'carro_compras/carro'
 
 
   #Anexando a prueba  
