@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Productos</h1>
+<% if user_signed_in? and current_user.tipo == 2 %>
+    <a class="btn btn-default" href="/products/new" >Agregar nuevo producto</a>
+<% end %>
 <div class="col-lg-10 col-lg-offset-1">
   <table class = "table">
     <thead>
@@ -27,6 +30,7 @@
           <td><%= product.categoria %></td>
           <td><%= product.tipo %></td>
           <td class = "btn btn-lg btn-info"><%= link_to 'Ver detalles', product %></td>
+                    
           <% if user_signed_in? %>
               <% if current_user.tipo == 2 %>  
                 <td class = "btn btn-lg btn-success"><%= link_to 'Editar', edit_product_path(product) %></td>
@@ -41,11 +45,6 @@
   </table>
 </div>
 <br>
-<% if user_signed_in? %>
-  <% if current_user.tipo == 2 %> 
-    <!--<%= link_to 'Agregar nuevo producto', new_product_path %> -->
-    <a class="btn btn-default" href="/products/new" >Agregar nuevo producto</a>
-    <% else %>  
-  <% end %>
-<% end %> 
 
+
+<td><%= link_to 'Agregar', :controller=>"carro_compras", :action=> "agregar_carro_compras", :id_prod => product.id%></td>

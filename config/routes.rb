@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'admin/index'
 
+  #post ':controller(/:action(/:id))'
+  #get  ':controller(/:action(/:id))'
+  
   #Lo necesario para el ActionMailer
   get 'contact' => "contact#index"
   post 'contact' => "contact#create"
@@ -18,8 +21,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'inicio/index'
-  get 'admin/tipo_producto'
-  get 'admin/agregar_tipo_producto'
 
   #Anexando a prueba  
   get "/inicio/prueba" => "inicio#prueba"

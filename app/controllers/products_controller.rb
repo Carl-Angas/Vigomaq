@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    respond_with(@product)
+    respond_with(@product) 
   end
 
   def edit

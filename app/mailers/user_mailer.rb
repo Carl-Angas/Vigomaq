@@ -1,9 +1,8 @@
 class UserMailer < ActionMailer::Base
-  #default from: "probando.mails.op@gmail.com"
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   default from: "probando.mails.op@gmail.com"
-
-
+  
+  
 def contacto(nombre,mail,asunto,mensaje)
 	@nombre = nombre
 	@mail = mail
