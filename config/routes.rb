@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   
+  resources :categoria
+
+  resources :modelos
+
+  resources :marcas
+
+  resources :tipo_productos
+
+  get 'admin/index'
+
   #Lo necesario para el ActionMailer
   get 'contact' => "contact#index"
   post 'contact' => "contact#create"
@@ -8,7 +18,10 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'inicio/index'
-  
+  get 'inicio/empresa'
+  get 'admin/tipo_producto'
+  get 'admin/agregar_tipo_producto'
+
   #Anexando a prueba  
   get "/inicio/prueba" => "inicio#prueba"
 

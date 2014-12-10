@@ -28,4 +28,21 @@
   <span class="glyphicon glyphicon-star"></span> Star
 </button>
 
+<<<<<<< HEAD
 <span class="glyphicon glyphicon-chevron-right"></span>
+=======
+<span class="glyphicon glyphicon-chevron-right"></span>
+
+
+
+
+
+
+<select name="tipo">
+<option value="" selected="selected"></option>
+<% @products.each do |product| %>
+
+  <option value="<%=product.id%>" ><%=product.nombre%></option>
+  <% end -%>
+</select>
+>>>>>>> 8bf4967c505a7d69ce91ead6bd6f105916c573d5

@@ -10,5 +10,8 @@ class InicioController < ApplicationController
     respond_with(@products)
 
   end
+
+  def empresa
+  end
   
 end
