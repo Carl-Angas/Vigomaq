@@ -51,10 +51,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menú <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="/products"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>      Productos</a>
-
               <a href="/products"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>      Productos</a>
-
             </li>
             <%if user_signed_in?%>
               <li>
@@ -64,6 +61,10 @@
             <%if current_user.tipo==2%>
               <li>
                 <a href="/admin/index"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>      Panel de control</a>
+              </li>  
+              <% else %>
+                <li>
+                <a href="/carrito_compras/carrito"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>      Carrito de compras</a>
               </li>  
             <% end -%>
             <li class="divider"></li>

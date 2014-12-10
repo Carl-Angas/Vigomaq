@@ -29,7 +29,6 @@
           <td><%= product.precio %></td>
           <td><%= product.categoria %></td>
           <td><%= product.tipo %></td>
-          <td class = "btn btn-lg btn-info"><%= link_to 'Ver detalles', product %></td>
           <td><%= link_to 'Agregar', :controller=>"carro_compras", :action=> "agregar_carro_compras", :id_prod => product.id%></td>
                     
           <% if user_signed_in? %>

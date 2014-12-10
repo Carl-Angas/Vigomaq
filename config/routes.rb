@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   
   resources :products
 
+  #get "products/index" 
+  #get "products/new"
+  #get "products/edit"
+
+
   devise_for :users
   get 'inicio/index'
 
