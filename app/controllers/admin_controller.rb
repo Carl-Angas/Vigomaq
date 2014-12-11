@@ -3,17 +3,11 @@ class AdminController < ApplicationController
   respond_to :html
 
   def index
-  end
-
-  def agregar_tipo_producto
-  	@tipo = TipoProducto.new
-  	respond_with(@tipo)
-  end
-
-  private
-
-    def tipoproducto_params
-      params.require(:tipo).permit(:tipo)
+    if not(user_signed_in? and current_user.tipo == 2)
+      redirect_to "/"
+    else
     end
+
+  end
 
 end

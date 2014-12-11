@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'tienda/Arriendo'
+
+  get 'tienda/Venta'
+
   resources :categoria
 
   resources :modelos
@@ -28,13 +32,13 @@ Rails.application.routes.draw do
   get 'inicio/index'
 
   get 'inicio/empresa'
-  get 'admin/tipo_producto'
-  get 'admin/agregar_tipo_producto'
-  get 'carro_compras/carro'
+
+  get 'carro_compras/index'
+  get 'tienda/index'
 
 
   #Anexando a prueba  
-  get "/inicio/prueba" => "inicio#prueba"
+  #get "/inicio/prueba" => "inicio#prueba"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

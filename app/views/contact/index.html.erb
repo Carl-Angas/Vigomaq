@@ -1,15 +1,19 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
-
-
-<div align="center">
+<div class="col-lg-6 col-lg-offset-3">
+<h1>Contacto</h1>
 <%= form_tag("/contact", :method => "post") do%>
-	<input type="text" name="nombre" placeholder="nombre"> <br>
-	<input type="mail" name="mail" placeholder="ejemplo@ejemplo.cl" value="<%= current_user.email%>" > <br>
-	<input type="text" name="asunto" placeholder="inserta el asunto ..."> <br>
-	<textarea name="mensaje" placeholder="inserta el contenido..."></textarea> <br>
+	Ingrese su nombre
+	<input type="text" name="nombre" placeholder="nombre" class="form-control col-sm-10"> <br>
+	Ingrese su email
+	<input type="mail" name="mail" placeholder="ejemplo@ejemplo.cl" value="<%= current_user.email%>" class="form-control col-sm-10"> <br>
+	Ingrese el asunto
+	<input type="text" name="asunto" placeholder="inserta el asunto ..." class="form-control col-sm-10"> <br>
+	Ingrese el contenido del mensaje
+	<textarea name="mensaje" placeholder="inserta el contenido..." class="form-control col-sm-10"></textarea> <br>
+	<br>
+	<div>
+		<input type="submit" value="Enviar correo" class="btn btn-lg btn-primary">
+	</div>
 
-	<input type="submit" value="Enviar correo">
 
 <% end %>
 </div>

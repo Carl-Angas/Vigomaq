@@ -29,14 +29,14 @@
           <td><%= product.precio %></td>
           <td><%= product.categoria %></td>
           <td><%= product.tipo %></td>
-          <td><%= link_to 'Agregar', :controller=>"carro_compras", :action=> "agregar_carro_compras", :id_prod => product.id%></td>
+          <% if user_signed_in? and current_user.tipo == 1 %>  
+            <td class="btn btn-lg btn-default" style="color:black"><%= link_to 'Agregar', :controller=>"carro_compras", :action=> "agregar_carro_compras", :id_prod => product.id%></td>
+          <% end -%>
                     
-          <% if user_signed_in? %>
-              <% if current_user.tipo == 2 %>  
-                <td class = "btn btn-lg btn-success"><%= link_to 'Editar', edit_product_path(product) %></td>
-                <td class = "btn btn-lg btn-warning"><%= link_to 'Borrar', product, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
-              <% else %>  
-              <% end %>
+          <% if user_signed_in? and current_user.tipo == 2 %>
+            <td class = "btn btn-lg btn-success"><%= link_to 'Editar', edit_product_path(product) %></td>
+            <td class = "btn btn-lg btn-danger"><%= link_to 'Borrar', product, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+          <% else %>  
           <% end %> 
 
           </tr>
@@ -45,5 +45,11 @@
   </table>
 </div>
 <br>
+<% if user_signed_in? and current_user.tipo == 2 %>
+  <a class="btn btn-lg btn-primary col-lg-offset-5" href="/admin" role="button"><span class="glyphicon glyphicon-backward"></span> Volver a panel </a>
+<% else%>
+  <a class="btn btn-lg btn-primary col-lg-offset-5" href="/" role="button"><span class="glyphicon glyphicon-backward"></span> Volver</a>
+<% end -%>
+
 
 

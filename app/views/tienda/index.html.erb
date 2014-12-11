@@ -1,0 +1,12 @@
+<%if current_user.tipo == 2%>
+<div class="col-lg-7 col-lg-offset-3">
+	<a class="btn btn-lg btn-warning" href="/tienda/Venta" role="button"><span class="glyphicon glyphicon-tag"></span>  Productos a la venta </a>
+	<a class="btn btn-lg btn-warning" href="/tienda/Arriendo" role="button"><span class="glyphicon glyphicon-tag"></span>   Productos para arriendo</a>
+	<a class="btn btn-lg btn-warning" href="/admin" role="button"><span class="glyphicon glyphicon-wrench"></span>   Ir al Panel</a>
+</div>
+<%else%>
+<div class="col-lg-5 col-lg-offset-4">
+	<a class="btn btn-lg btn-warning" href="/tienda/Venta" role="button"><span class="glyphicon glyphicon-tag"></span>  Productos a la venta </a>
+	<a class="btn btn-lg btn-warning" href="/tienda/Arriendo" role="button"><span class="glyphicon glyphicon-tag"></span>   Productos para arriendo</a>
+</div>
+<% end -%>

@@ -7,18 +7,21 @@ class CarroComprasController < ApplicationController
 	    #render :text => params[:id_prod]
 	    @usr.products << @prod
 
-	    redirect_to "/carro_compras/carro"
+	    redirect_to "/carro_compras"
 		
 	end
 
-	def carro
-		@carro = User.find(current_user.id).products
+	def index
+		@carroA = User.find(current_user.id).products.where(:tipo => "Arriendo")
+		@carroV = User.find(current_user.id).products.where(:tipo => "Venta")
+		@totalA = @carroA.sum(:precio)
+		@totalV = @carroV.sum(:precio)
 		@total = User.find(current_user.id).products.sum(:precio)
 	end
 
 	def quitar_producto
 		#render :text => params[:id_prod]
 		current_user.products.delete(Product.where(:id => params[:id_prod]))
-		redirect_to "/carro_compras/carro"
+		redirect_to "/carro_compras"
 	end
 end

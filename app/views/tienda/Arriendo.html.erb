@@ -1,0 +1,43 @@
+<h1>Productos para arriendo</h1>
+
+
+<div class="col-lg-10 col-lg-offset-1">
+  <table class = "table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @arriendo.each do |a| %>
+        <tr>
+          <td class="img-thumbnail"><%= image_tag a.image.url(:medium) %></td>
+          <td><%= a.nombre %></td>
+          <td><%= a.modelo %></td>
+          <td><%= a.marca %></td>
+          <td>$<%= a.precio %></td>
+          <td><%= a.categoria %></td>
+          <% if user_signed_in? %>  
+            <% if current_user.tipo == 1 %> 
+              <td class="btn btn-lg btn-default"><%= link_to 'Agregar', :controller=>"carro_compras", :action=> "agregar_carro_compras", :id_prod => a.id%></td>
+            <% elsif current_user.tipo == 2 %>  
+                <td class = "btn btn-lg btn-success"><%= link_to 'Editar', edit_product_path(a) %></td>
+                <td class = "btn btn-lg btn-warning"><%= link_to 'Borrar', a, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+            <% else %>  
+            <% end %>
+          <% end %> 
+
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<a class="btn btn-lg btn-primary col-lg-offset-5" href="/tienda" role="button">Volver a tienda <span class="glyphicon glyphicon-backward"></span></a>

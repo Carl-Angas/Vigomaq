@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Categoria</h1>
+<h1>Categorias</h1>
 <div class="col-lg-8 col-lg-offset-2">
   <table class="table">
     <thead>
@@ -14,9 +14,9 @@
       <% @categoria.each do |categorium| %>
         <tr>
           <td><%= categorium.categoria %></td>
-          <td><%= link_to 'Show', categorium %></td>
-          <td><%= link_to 'Edit', edit_categorium_path(categorium) %></td>
-          <td><%= link_to 'Destroy', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Ver', categorium %></td>
+          <td><%= link_to 'Editar', edit_categorium_path(categorium) %></td>
+          <td><%= link_to 'Borrar', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -24,4 +24,8 @@
 </div>
 <br>
 
-<%= link_to 'New Categorium', new_categorium_path %>
+<%= link_to 'Nueva categoría', new_categorium_path %>
+
+<br>
+
+<a class="btn btn-lg btn-primary col-lg-offset-5" href="/admin" role="button">Volver a panel <span class="glyphicon glyphicon-backward"></span></a>

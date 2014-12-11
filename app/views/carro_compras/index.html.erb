@@ -1,0 +1,54 @@
+<div class="panel panel-default container">
+	<h1>Carro de compras</h1>
+	<div class="panel-body">
+
+	<h2>Productos a comprar</h2>
+		<div class="col-lg-10 col-lg-offset-1">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th>Valor</th>
+						<th>Total: $<%=@totalV %> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @carroV.each do |c| %>
+						<tr>
+							<td><%=c.nombre%></td>
+							<td>$<%=c.precio%></td>
+							<td><%= link_to 'Quitar', :controller=>"carro_compras", :action=> "quitar_producto", :id_prod => c.id%></td>
+						</tr>		
+					<% end -%>
+				</tbody>
+			</table>
+		</div>
+	<h2>Productos a arrendar</h2>
+		<div class="col-lg-10 col-lg-offset-1">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Producto</th>
+						<th>Valor</th>
+						<th>Total: $<%=@totalA %> </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @carroA.each do |c| %>
+						<tr>
+							<td><%=c.nombre%></td>
+							<td>$<%=c.precio%></td>
+							<td><%= link_to 'Quitar', :controller=>"carro_compras", :action=> "quitar_producto", :id_prod => c.id%></td>
+						</tr>		
+					<% end -%>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="panel-heading col-lg-4 col-lg-offset-4"  style="background-color:lightgray;" align="center">
+		<h2>Total a pagar : $<%=@total %></h2> 
+	</div>
+</div>
+
+
+<a class="btn btn-lg btn-primary col-lg-offset-5" href="/tienda" role="button">Volver a tienda <span class="glyphicon glyphicon-backward"></span></a>
